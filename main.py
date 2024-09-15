@@ -79,12 +79,6 @@ async def on_member_remove(member):
     
     await channel.send(embed=embed)
 
-# Run the bot
-if __name__ == "__main__":
-    for file in os.listdir('./cogs'):
-        if file.endswith('.py'):
-            bot.load_extension(f'cogs.{file[:-3]}')
-
     server_on()
 
     bot.run(os.getenv('TOKEN'))
