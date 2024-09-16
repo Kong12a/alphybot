@@ -5,7 +5,7 @@ const twvoucher = require('@fortune-inc/tw-voucher');
 const app = express();
 app.use(bodyParser.json());
 
-app.post('/topup', async (req, res) => {
+app.post('/', async (req, res) => {
     const { code } = req.body;
     
     if (!code) return res.status(400).send('❌ | กรุณาระบุลิ้งอังเปา');
