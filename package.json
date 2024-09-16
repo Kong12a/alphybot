@@ -1,4 +1,10 @@
 {
+  "name": "alphyriabot",
+  "version": "1.0.0",
+  "main": "topup.js",
+  "scripts": {
+    "start": "node topup.js"
+  },
   "dependencies": {
     "@fortune-inc/tw-voucher": "^1.0.11",
     "body-parser": "^1.20.3",
