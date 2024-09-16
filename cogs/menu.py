@@ -43,7 +43,7 @@ class DonationBot(commands.Cog):
             description = "\n".join([f"**{i+1}.** {row[0]} - **{row[1]:,}** บาท" for i, row in enumerate(results)])
             embed = discord.Embed(title="🏆 อันดับการเติมเงินสูงสุด 10 อันดับ 🏆", description=description, color=discord.Color.green())
             embed.set_thumbnail(url="https://i.imgur.com/4M34hi2.png")
-            embed.set_footer(text="ระบบนี้ถูกพัฒนาโดยทีมงาน FaNo-Gen", icon_url="https://i.imgur.com/AfFp7pu.png")
+            embed.set_footer(text="ระบบนี้ถูกพัฒนาโดยทีมงาน", icon_url="https://i.imgur.com/AfFp7pu.png")
             embed.set_image(url="https://i.pinimg.com/originals/2f/56/90/2f5690ee185f5345025b1a5b0bf2c8aa.gif")
             view = View(timeout=None)
 
@@ -87,7 +87,7 @@ class TopUpModal(Modal):
     async def callback(self, interaction: discord.Interaction):
         code = self.children[0].value
         try:
-            response = requests.post('https://alphybot.onrender.com/', json={'code': code})
+            response = requests.post('https://alphybot.onrender.com/topup', json={'code': code})
             result = response.text
             print(result)  # พิมพ์ค่าที่ได้รับจาก API
             response.raise_for_status()  # ตรวจสอบรหัสสถานะ HTTP

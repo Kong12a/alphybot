@@ -3,9 +3,9 @@ const bodyParser = require('body-parser');
 const twvoucher = require('@fortune-inc/tw-voucher');
 
 const app = express();
-app.use(bodyParser.json());
+app.use(express.json());
 
-app.post('/', async (req, res) => {
+app.post('/topup', async (req, res) => {
     const { code } = req.body;
     
     if (!code) return res.status(400).send('❌ | กรุณาระบุลิ้งอังเปา');
@@ -19,6 +19,7 @@ app.post('/', async (req, res) => {
     }
 });
 
-app.listen(3000, () => {
-    console.log('Server running on port 3000');
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
 });
