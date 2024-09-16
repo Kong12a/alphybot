@@ -11,7 +11,7 @@ app.post('/topup', async (req, res) => {
     if (!code) return res.status(400).send('❌ | กรุณาระบุลิ้งอังเปา');
     
     try {
-        const redeemed = await twvoucher('0965890807', code);
+        const redeemed = await twvoucher('0638430912', code);
         // บันทึกข้อมูลลงฐานข้อมูลที่นี่
         res.send('✅ | เติมเงินจำนวน ' + redeemed.amount + ' แล้ว!');
     } catch (err) {
