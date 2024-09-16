@@ -87,7 +87,7 @@ class TopUpModal(Modal):
     async def callback(self, interaction: discord.Interaction):
         code = self.children[0].value
         try:
-            response = requests.post('https://alphybot.onrender.com/topup', json={'code': code})
+            response = requests.post('52.41.36.82/topup', json={'code': code})
             result = response.text
             print(result)  # พิมพ์ค่าที่ได้รับจาก API
             response.raise_for_status()  # ตรวจสอบรหัสสถานะ HTTP
