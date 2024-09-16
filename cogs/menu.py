@@ -7,10 +7,10 @@ import mysql.connector
 # เชื่อมต่อกับฐานข้อมูล MySQL
 try:
     db = mysql.connector.connect(
-        host="127.0.0.1",
-        user="root",
-        password="1512",
-        database="discord"
+        host="bhfzkcw6h9o6pheqvmm7-mysql.services.clever-cloud.com",
+        user="ucvmfdraedrvbjuy",
+        password="lc0bkqgnudvsyA2ZdGa1",
+        database="bhfzkcw6h9o6pheqvmm7"
     )
     cursor = db.cursor()
 except mysql.connector.Error as err:
